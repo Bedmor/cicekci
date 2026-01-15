@@ -19,3 +19,14 @@ model Post {
 
     @@index([name])
 }
+
+model Order {
+    id        Int      @id @default(autoincrement())
+    name      String
+    phone     String
+    address   String
+    flower    String
+    note      String?
+    completed Boolean @default(false)
+    createdAt DateTime @default(now())
+}
