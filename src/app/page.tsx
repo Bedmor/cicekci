@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
@@ -160,10 +161,15 @@ export default function HomePage() {
                   className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer bg-gray-800 shadow-xl border border-white/10"
                   onClick={() => setSelectedImage(`/${selectedFolder}/${img}`)}
                 >
-                  <div
-                    className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                    style={{ backgroundImage: `url('/${selectedFolder}/${img}')` }}
-                  ></div>
+                  <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
+                    <Image
+                      src={`/${selectedFolder}/${img}`}
+                      alt={`Ada Çiçekçilik - ${selectedFolder} - ${idx + 1}`}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                     <span className="material-symbols-outlined text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-4xl drop-shadow-lg">visibility</span>
                   </div>
@@ -252,12 +258,14 @@ export default function HomePage() {
                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 z-0">
                       <span className="material-symbols-outlined text-4xl">image</span>
                    </div>
-                  <div
-                    className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 relative z-10"
-                    style={{
-                      backgroundImage: `url('${category.image}')`,
-                    }}
-                  >
+                  <div className="relative w-full h-full transition-transform duration-700 group-hover:scale-110 z-10">
+                    <Image
+                      src={category.image}
+                      alt={`${category.title} - Ada Çiçekçilik`}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                    />
                     {/* Overlay with View Icon */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300">
                          <span className="material-symbols-outlined text-white text-5xl drop-shadow-lg">visibility</span>
@@ -310,12 +318,15 @@ export default function HomePage() {
             {/* Image Side */}
             <div className="flex-1 w-full order-1 lg:order-2">
               <div className="relative w-full lg:w-1/2 aspect-4/5 md:aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden group">
-              <div
-                className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                style={{
-                  backgroundImage: "url('/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg')",
-                }}
-              ></div>
+              <div className="relative w-full h-full transition-transform duration-1000 group-hover:scale-105">
+                <Image
+                  src="/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg"
+                  alt="Ada Çiçekçilik Hikayesi"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
             </div>
           </div>

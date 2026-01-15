@@ -5,16 +5,44 @@ import { Epilogue } from "next/font/google";
 import { ThemeProvider } from "~/app/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Ada Çiçekçilik",
-  description: "Özenle hazırlanmış çiçek aranjmanları ve buketler.",
+  metadataBase: new URL("https://adacicekcilik.com"),
+  title: {
+    default: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
+    template: "%s | Ada Çiçekçilik"
+  },
+  description: "Sakarya Adapazarı'nda hizmet veren Ada Çiçekçilik. En taze çiçekler, özel tasarım buketler, gelin arabası süsleme, çelenk, isteme çiçeği ve yapay çiçek hizmetleri. Sakarya Caddesi ve çevresine aynı gün hızlı teslimat.",
+  keywords: ["sakarya çiçekçi", "adapazarı çiçekçi", "serdivan çiçekçi", "erenler çiçekçi", "çiçekçilik", "nöbetçi çiçekçi", "sakarya caddesi çiçekçi", "canlı çiçek", "gelin arabası süsleme", "cenaze çelengi", "açılış çiçeği", "kız isteme çiçeği", "yapay çiçek", "taze çiçek siparişi"],
+  authors: [{ name: "Ada Çiçekçilik" }],
+  creator: "Ada Çiçekçilik",
+  publisher: "Ada Çiçekçilik",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/favicon.svg",
+      },
+    ],
   },
   openGraph: {
-    title: "Ada Çiçekçilik",
-    description: "Özenle hazırlanmış çiçek aranjmanları ve buketler.",
+    title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
+    description: "Sakarya'nın en seçkin çiçekçisi. Özel günleriniz, düğün, nişan, açılış ve tüm organizasyonlarınız için taze ve şık tasarımlar.",
     url: "https://adacicekcilik.com",
     siteName: "Ada Çiçekçilik",
     images: [
@@ -22,7 +50,7 @@ export const metadata: Metadata = {
         url: "/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Ada Çiçekçilik",
+        alt: "Ada Çiçekçilik Sakarya",
       },
     ],
     locale: "tr_TR",
@@ -30,10 +58,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ada Çiçekçilik",
-    description: "Özenle hazırlanmış çiçek aranjmanları ve buketler.",
+    title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
+    description: "Sakarya Adapazarı çiçek siparişi. En özel anlarınız için yanınızdayız.",
     images: ["/hero.jpg"],
+    creator: "@adacicekcilik", // Assuming handle or generic
   },
+  verification: {
+    google: "google-site-verification-code", // Placeholder
+    yandex: "yandex-verification-code", // Placeholder
+  },
+  category: "Florist",
 };
 
 const epilogue = Epilogue({
@@ -45,8 +79,54 @@ const epilogue = Epilogue({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Ada Çiçekçilik",
+    "image": "https://adacicekcilik.com/hero.jpg",
+    "url": "https://adacicekcilik.com",
+    "telephone": "+905399347107",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sakarya Caddesi",
+      "addressLocality": "Adapazarı",
+      "addressRegion": "Sakarya",
+      "postalCode": "54100",
+      "addressCountry": "TR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 40.7678185,
+      "longitude": 30.4113718
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/sakarya_ada_cicekcilik"
+    ],
+    "priceRange": "₺₺"
+  };
+
   return (
-    <html lang="en" className={`${epilogue.variable} min-h-screen`} suppressHydrationWarning>
+    <html lang="tr" className={`${epilogue.variable} min-h-screen`} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <head>
         <link
           rel="stylesheet"
