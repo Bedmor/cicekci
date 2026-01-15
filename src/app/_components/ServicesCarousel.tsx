@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 interface Service {
@@ -186,11 +187,13 @@ export default function ServicesCarousel() {
                 className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl shadow-sm hover:shadow-md transition snap-start overflow-hidden flex-shrink-0 cursor-pointer"
                 onClick={() => setSelectedService(service)}
               >
-                <div className="h-48 overflow-hidden">
-                  <img
+                <div className="h-48 overflow-hidden relative">
+                  <Image
                     src={service.coverImage}
                     alt={service.title}
-                    className="w-full h-full object-cover hover:scale-105 transition duration-500"
+                    fill
+                    className="object-cover hover:scale-105 transition duration-500"
+                    sizes="(max-width: 768px) 100vw, 320px"
                   />
                 </div>
                 <div className="p-6 text-center">
@@ -240,11 +243,13 @@ export default function ServicesCarousel() {
             <div className="p-6 overflow-y-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {selectedService.images.map((img, idx) => (
-                  <div key={idx} className="aspect-square rounded-lg overflow-hidden bg-gray-100">
-                    <img
+                  <div key={idx} className="aspect-square rounded-lg overflow-hidden bg-gray-100 relative">
+                    <Image
                       src={img}
                       alt={`${selectedService.title} ${idx + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition duration-300"
+                      fill
+                      className="object-cover hover:scale-105 transition duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                 ))}

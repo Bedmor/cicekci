@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
+import { ArrowLeft } from "lucide-react";
 
 // Image data mapping
 const categoryImages: Record<string, string[]> = {
@@ -189,7 +190,16 @@ export default function HomePage() {
           >
             <span className="material-symbols-outlined text-4xl">close</span>
           </button>
-          <img src={selectedImage} alt="Full view" className="max-h-[90vh] max-w-[90vw] object-contain rounded-lg" />
+          <div className="relative w-[90vw] h-[90vh]">
+            <Image 
+              src={selectedImage} 
+              alt="Detaylı Görünüm - Ada Çiçekçilik" 
+              fill
+              className="object-contain rounded-lg" 
+              sizes="90vw" 
+              priority
+            />
+          </div>
         </div>
       )}
 
@@ -218,9 +228,7 @@ export default function HomePage() {
                   className="group flex items-center gap-2 h-12 px-8 bg-primary text-white rounded-xl font-bold hover:bg-[#a65d36] transition-all transform active:scale-95 shadow-lg shadow-primary/20"
                 >
                   <span>İletişime Geç</span>
-                  <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">
-                    arrow_forward
-                  </span>
+                  <ArrowLeft className="transform rotate-180 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#categories"
