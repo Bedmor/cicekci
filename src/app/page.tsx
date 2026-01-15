@@ -153,7 +153,7 @@ export default function HomePage() {
           <h2 className="text-white text-3xl font-bold mb-8 capitalize shrink-0">{categories.find(c => c.folder === selectedFolder)?.title}</h2>
           
           <div className="w-full max-w-7xl flex-1 overflow-y-auto min-h-0 pr-2 pb-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 pb-10">
               {categoryImages[selectedFolder]?.map((img, idx) => (
                 <div 
                   key={idx} 
@@ -196,13 +196,13 @@ export default function HomePage() {
               <span className="uppercase tracking-[0.2em] text-primary text-xs font-bold pl-1">
                 2026 Yeni Koleksiyon
               </span>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-text-main dark:text-white">
+              <h1 className="text-3xl sm:text-6xl md:text-7xl font-black leading-[1.1] tracking-tight text-text-main dark:text-white">
                 Doğanın Sanatı <br className="hidden md:block" />
                 <span className="font-light italic font-serif text-text-muted dark:text-gray-400">
                   Evinizin Işığı
                 </span>
               </h1>
-              <p className="text-lg text-text-muted dark:text-gray-300 max-w-md leading-relaxed">
+              <p className="text-sm text-text-muted dark:text-gray-300 max-w-md leading-relaxed">
                 Mevsimin en taze çiçekleriyle hazırlanan el yapımı aranjmanlar kapınıza gelsin.
                 Doğanın güzelliğini yaşam alanlarınıza taşıyın.
               </p>
@@ -225,20 +225,13 @@ export default function HomePage() {
               </div>
             </div>
             {/* Image Content */}
-            <div className="relative w-full lg:w-1/2 aspect-4/5 md:aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden group">
-              <div
-                className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                style={{
-                  backgroundImage: "url('/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg')",
-                }}
-              ></div>
-            </div>
+            
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section id="categories" className="w-full px-4 sm:px-10 py-20 bg-white dark:bg-[#1a1512]">
+      <section id="categories" className="w-full px-4 sm:px-10 py-10 bg-white dark:bg-[#1a1512]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
             <div>
@@ -247,22 +240,13 @@ export default function HomePage() {
                 Resimlerin üzerine tıklayarak ilgili kategorideki diğer ürünleri inceleyebilirsiniz.
               </p>
             </div>
-            <a
-              href="#"
-              className="flex items-center gap-1 text-primary font-bold hover:underline"
-            >
-              Tümünü Gör
-              <span className="material-symbols-outlined text-sm">
-                arrow_forward
-              </span>
-            </a>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {categories.map((category, index) => (
               <div 
                 key={index}
                 onClick={() => openGallery(category.folder)}
-                className="group relative flex flex-col gap-4 cursor-pointer"
+                className="group relative flex flex-col gap-2 sm:gap-4 cursor-pointer"
               >
                 <div className="overflow-hidden rounded-2xl aspect-3/4 w-full bg-gray-100 dark:bg-gray-800 shadow-md transform transition-all hover:shadow-xl">
                    <div className="absolute inset-0 flex items-center justify-center text-gray-400 z-0">
@@ -281,7 +265,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                  <h3 className="text-sm sm:text-xl font-bold group-hover:text-primary transition-colors">
                     {category.title}
                   </h3>
                   <p className="text-sm text-text-muted dark:text-gray-400 mt-1">
@@ -325,27 +309,14 @@ export default function HomePage() {
             </div>
             {/* Image Side */}
             <div className="flex-1 w-full order-1 lg:order-2">
-              <div className="relative">
-                <div className="aspect-4/3 rounded-2xl overflow-hidden shadow-2xl">
-                  <div
-                    className="w-full h-full bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url('/buket/WhatsApp Image 2026-01-14 at 18.31.25.jpeg')",
-                    }}
-                  ></div>
-                </div>
-                {/* Small overlay image */}
-                <div className="absolute -bottom-8 -left-8 w-1/2 aspect-square rounded-2xl overflow-hidden border-4 border-background-light dark:border-background-dark shadow-xl hidden md:block">
-                  <div
-                    className="bg-cover bg-center w-full h-full"
-                    style={{
-                      backgroundImage:
-                        "url('/acilis ve dugun/WhatsApp Image 2026-01-14 at 18.35.05.jpeg')",
-                    }}
-                  ></div>
-                </div>
-              </div>
+              <div className="relative w-full lg:w-1/2 aspect-4/5 md:aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden group">
+              <div
+                className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                style={{
+                  backgroundImage: "url('/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg')",
+                }}
+              ></div>
+            </div>
             </div>
           </div>
         </div>

@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="w-full px-4 sm:px-10 py-6 z-50">
@@ -24,6 +31,17 @@ export default function Navbar() {
           <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">İletişim</Link>
         </nav>
         <div className="flex items-center gap-4">
+          <button
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            title="Temayı Değiştir"
+          >
+            {mounted && (
+              <span className="material-symbols-outlined text-[20px] text-text-main dark:text-white">
+                {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
+              </span>
+            )}
+          </button>
           
           <Link 
             href="#contact"
