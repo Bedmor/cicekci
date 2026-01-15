@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Ada Çiçekçilik",
     images: [
       {
-        url: "/hero.jpg",
+        url: "/og.png",
         width: 1200,
         height: 630,
         alt: "Ada Çiçekçilik Sakarya",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
     description: "Sakarya Adapazarı çiçek siparişi. En özel anlarınız için yanınızdayız.",
-    images: ["/hero.jpg"],
+    images: ["/og.png"],
     creator: "@adacicekcilik", // Assuming handle or generic
   },
   verification: {
@@ -83,7 +83,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Florist",
     "name": "Ada Çiçekçilik",
-    "image": "https://adacicekcilik.com/hero.jpg",
+    "image": "https://adacicekcilik.com/og.png",
     "url": "https://adacicekcilik.com",
     "telephone": "+905399347107",
     "address": {
