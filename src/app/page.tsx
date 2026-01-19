@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
+import WelcomeModal from "./_components/WelcomeModal";
 import { ArrowLeft } from "lucide-react";
 
 // Image data mapping
@@ -139,6 +140,7 @@ export default function HomePage() {
 
   return (
     <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-300 font-sans">
+      <WelcomeModal />
       <Navbar />
       <ContactMenu />
 
@@ -325,7 +327,6 @@ export default function HomePage() {
             </div>
             {/* Image Side */}
             <div className="flex-1 w-full order-1 lg:order-2">
-              <div className="relative w-full lg:w-1/2 aspect-4/5 md:aspect-square lg:aspect-4/5 rounded-2xl overflow-hidden group">
               <div className="relative w-full h-full transition-transform duration-1000 group-hover:scale-105">
                 <Image
                   src="/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg"
@@ -335,7 +336,6 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-            </div>
             </div>
           </div>
         </div>
