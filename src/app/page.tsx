@@ -206,7 +206,7 @@ export default function HomePage() {
       )}
 
       {/* Hero Section */}
-      <section className="flex-1 w-full px-4 sm:px-10 pb-10 pt-4 md:pt-12">
+      <section className="flex-1 w-full px-4 sm:px-10 pb-10 pt-32 m-auto md:pt-40">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-center">
             {/* Text Content */}

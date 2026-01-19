@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="w-full px-4 sm:px-10 py-6 z-50">
+    <header className="fixed top-0 left-0 w-full px-4 sm:px-10 py-6 z-40 transition-all duration-300 backdrop-blur-md bg-white/70 dark:bg-black/60 border-b border-white/10">
       <div className="max-w-[1280px] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
           <span className="material-symbols-outlined text-primary text-3xl transition-transform duration-500 group-hover:rotate-45">

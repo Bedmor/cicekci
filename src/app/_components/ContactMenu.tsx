@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Instagram, MessageCircle, Phone, MapPin, X, MessageSquare } from "lucide-react";
-import { redirect } from "next/navigation";
 
 export default function ContactMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +30,7 @@ export default function ContactMenu() {
     },
     { 
         id: 'address', icon: MapPin, color: 'bg-purple-500', 
-        onClick: () => redirect("https://goo.gl/maps/NxipVycnV9M8YA479"), label: "Adres",
+        href: "https://goo.gl/maps/NxipVycnV9M8YA479", target: "_blank", label: "Adres",
         x: -R, y: 0 
     }
   ];

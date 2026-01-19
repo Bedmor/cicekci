@@ -16,6 +16,10 @@
   --radius-xl: 1.5rem;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Utilities for scrollbar hiding */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
