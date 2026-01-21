@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
+import Script from "next/script";
 import { Epilogue } from "next/font/google";
 import { ThemeProvider } from "~/app/theme-provider";
 
@@ -168,6 +169,18 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className="antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17893129295"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17893129295');
+          `}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
