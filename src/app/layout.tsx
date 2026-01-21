@@ -90,8 +90,8 @@ export const metadata: Metadata = {
     creator: "@adacicekcilik", // Assuming handle or generic
   },
   verification: {
-    google: "google-site-verification-code", // Placeholder
-    yandex: "yandex-verification-code", // Placeholder
+    // google: "google-site-verification-code",
+    // yandex: "yandex-verification-code",
   },
   category: "Florist",
 };
