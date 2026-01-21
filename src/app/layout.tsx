@@ -1,17 +1,40 @@
 import "~/styles/globals.css";
 
-import { type Metadata } from "next";
+import { type Metadata, type Viewport } from "next";
 import { Epilogue } from "next/font/google";
 import { ThemeProvider } from "~/app/theme-provider";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adacicekcilik.com"),
   title: {
     default: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
-    template: "%s | Ada Çiçekçilik"
+    template: "%s | Ada Çiçekçilik",
   },
-  description: "Sakarya Adapazarı'nda hizmet veren Ada Çiçekçilik. En taze çiçekler, özel tasarım buketler, gelin arabası süsleme, çelenk, isteme çiçeği ve yapay çiçek hizmetleri. Sakarya Caddesi ve çevresine aynı gün hızlı teslimat.",
-  keywords: ["sakarya çiçekçi", "adapazarı çiçekçi", "serdivan çiçekçi", "erenler çiçekçi", "çiçekçilik", "nöbetçi çiçekçi", "sakarya caddesi çiçekçi", "canlı çiçek", "gelin arabası süsleme", "cenaze çelengi", "açılış çiçeği", "kız isteme çiçeği", "yapay çiçek", "taze çiçek siparişi"],
+  description:
+    "Sakarya Adapazarı'nda hizmet veren Ada Çiçekçilik. En taze çiçekler, özel tasarım buketler, gelin arabası süsleme, çelenk, isteme çiçeği ve yapay çiçek hizmetleri. Sakarya Caddesi ve çevresine aynı gün hızlı teslimat.",
+  keywords: [
+    "sakarya çiçekçi",
+    "adapazarı çiçekçi",
+    "serdivan çiçekçi",
+    "erenler çiçekçi",
+    "çiçekçilik",
+    "nöbetçi çiçekçi",
+    "sakarya caddesi çiçekçi",
+    "canlı çiçek",
+    "gelin arabası süsleme",
+    "cenaze çelengi",
+    "açılış çiçeği",
+    "kız isteme çiçeği",
+    "yapay çiçek",
+    "taze çiçek siparişi",
+  ],
   authors: [{ name: "Ada Çiçekçilik" }],
   creator: "Ada Çiçekçilik",
   publisher: "Ada Çiçekçilik",
@@ -42,7 +65,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
-    description: "Sakarya'nın en seçkin çiçekçisi. Özel günleriniz, düğün, nişan, açılış ve tüm organizasyonlarınız için taze ve şık tasarımlar.",
+    description:
+      "Sakarya'nın en seçkin çiçekçisi. Özel günleriniz, düğün, nişan, açılış ve tüm organizasyonlarınız için taze ve şık tasarımlar.",
     url: "https://adacicekcilik.com",
     siteName: "Ada Çiçekçilik",
     images: [
@@ -59,7 +83,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçekçi",
-    description: "Sakarya Adapazarı çiçek siparişi. En özel anlarınız için yanınızdayız.",
+    description:
+      "Sakarya Adapazarı çiçek siparişi. En özel anlarınız için yanınızdayız.",
     images: ["/og.png"],
     creator: "@adacicekcilik", // Assuming handle or generic
   },
@@ -82,45 +107,47 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Florist",
-    "name": "Ada Çiçekçilik",
-    "image": "https://adacicekcilik.com/og.png",
-    "url": "https://adacicekcilik.com",
-    "telephone": "+905399347107",
-    "address": {
+    name: "Ada Çiçekçilik",
+    image: "https://adacicekcilik.com/og.png",
+    url: "https://adacicekcilik.com",
+    telephone: "+905399347107",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "Sakarya Caddesi",
-      "addressLocality": "Adapazarı",
-      "addressRegion": "Sakarya",
-      "postalCode": "54100",
-      "addressCountry": "TR"
+      streetAddress: "Sakarya Caddesi",
+      addressLocality: "Adapazarı",
+      addressRegion: "Sakarya",
+      postalCode: "54100",
+      addressCountry: "TR",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 40.7678185,
-      "longitude": 30.4113718
+      latitude: 40.7678185,
+      longitude: 30.4113718,
     },
-    "openingHoursSpecification": {
+    openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
+      dayOfWeek: [
         "Monday",
         "Tuesday",
         "Wednesday",
         "Thursday",
         "Friday",
         "Saturday",
-        "Sunday"
+        "Sunday",
       ],
-      "opens": "09:00",
-      "closes": "21:00"
+      opens: "09:00",
+      closes: "21:00",
     },
-    "sameAs": [
-      "https://www.instagram.com/sakarya_ada_cicekcilik"
-    ],
-    "priceRange": "₺₺"
+    sameAs: ["https://www.instagram.com/sakarya_ada_cicekcilik"],
+    priceRange: "₺₺",
   };
 
   return (
-    <html lang="tr" className={`${epilogue.variable} min-h-screen`} suppressHydrationWarning>
+    <html
+      lang="tr"
+      className={`${epilogue.variable} min-h-screen`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           type="application/ld+json"
@@ -141,7 +168,12 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className="antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>

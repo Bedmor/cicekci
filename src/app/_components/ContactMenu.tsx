@@ -56,7 +56,6 @@ export default function ContactMenu() {
                href={item.href}
                target={item.target}
                rel={item.target ? "noopener noreferrer" : undefined}
-               onClick={item.onClick}
                title={item.label}
                className={`absolute w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer hover:scale-110 z-10 ${item.color} transition-all duration-300 ease-out`}
                style={{
