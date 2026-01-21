@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "kız isteme çiçeği",
     "yapay çiçek",
     "taze çiçek siparişi",
+    "ada çiçekçilik",
   ],
   authors: [{ name: "Ada Çiçekçilik" }],
   creator: "Ada Çiçekçilik",
@@ -150,6 +151,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+      <meta name="google-site-verification" content="onix-OzvNRw1y8eBYXjJsLV6j9AJ3K4DC8ySAJEf54c" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
