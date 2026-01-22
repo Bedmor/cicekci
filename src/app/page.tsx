@@ -5,7 +5,6 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
-import WelcomeModal from "./_components/WelcomeModal";
 import { ArrowLeft } from "lucide-react";
 
 // Image data mapping
@@ -140,7 +139,6 @@ export default function HomePage() {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-text-main relative flex min-h-screen w-full flex-col overflow-x-hidden font-sans transition-colors duration-300 dark:text-white">
-      <WelcomeModal />
       <Navbar />
       <ContactMenu />
 
