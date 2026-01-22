@@ -1,9 +1,9 @@
 import "~/styles/globals.css";
 
 import { type Metadata, type Viewport } from "next";
-import Script from "next/script";
 import { Epilogue } from "next/font/google";
 import { ThemeProvider } from "~/app/theme-provider";
+import CookieManager from "./_components/CookieManager";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "serdivan çiçekçi",
     "erenler çiçekçi",
     "çiçekçilik",
+    "gece açık çiçekçi",
     "nöbetçi çiçekçi",
     "sakarya caddesi çiçekçi",
     "canlı çiçek",
@@ -36,6 +37,11 @@ export const metadata: Metadata = {
     "yapay çiçek",
     "taze çiçek siparişi",
     "ada çiçekçilik",
+    "sakarya orkide",
+    "sakarya gül siparişi",
+    "sakarya teraryum",
+    "adapazarı çiçek gönder",
+    "sakarya butik çiçekçi",
   ],
   authors: [{ name: "Ada Çiçekçilik" }],
   creator: "Ada Çiçekçilik",
@@ -52,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://adacicekcilik.com",
   },
   icons: {
     icon: "/favicon.svg",
@@ -91,8 +97,7 @@ export const metadata: Metadata = {
     creator: "@adacicekcilik", // Assuming handle or generic
   },
   verification: {
-    // google: "google-site-verification-code",
-    // yandex: "yandex-verification-code",
+    google: "onix-OzvNRw1y8eBYXjJsLV6j9AJ3K4DC8ySAJEf54c",
   },
   category: "Florist",
 };
@@ -151,7 +156,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-      <meta name="google-site-verification" content="onix-OzvNRw1y8eBYXjJsLV6j9AJ3K4DC8ySAJEf54c" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -171,18 +175,7 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className="antialiased">
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17893129295"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17893129295');
-          `}
-        </Script>
+        <CookieManager />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

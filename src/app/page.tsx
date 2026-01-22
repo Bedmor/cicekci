@@ -158,28 +158,35 @@ export default function HomePage() {
 
           <div className="min-h-0 w-full max-w-7xl flex-1 overflow-y-auto pr-2 pb-4">
             <div className="grid grid-cols-2 gap-3 pb-10 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
-              {categoryImages[selectedFolder]?.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-gray-800 shadow-xl"
-                  onClick={() => setSelectedImage(`/${selectedFolder}/${img}`)}
-                >
-                  <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-110">
-                    <Image
-                      src={`/${selectedFolder}/${img}`}
-                      alt={`Ada Çiçekçilik - ${selectedFolder} - ${idx + 1}`}
-                      fill
-                      className="object-cover object-center"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                    />
+              {categoryImages[selectedFolder]?.map((img, idx) => {
+                const categoryTitle =
+                  categories.find((c) => c.folder === selectedFolder)?.title ||
+                  "Çiçek";
+                return (
+                  <div
+                    key={idx}
+                    className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl border border-white/10 bg-gray-800 shadow-xl"
+                    onClick={() =>
+                      setSelectedImage(`/${selectedFolder}/${img}`)
+                    }
+                  >
+                    <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-110">
+                      <Image
+                        src={`/${selectedFolder}/${img}`}
+                        alt={`${categoryTitle} Modeli ${idx + 1} - Ada Çiçekçilik Sakarya`}
+                        fill
+                        className="object-cover object-center"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      />
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
+                      <span className="material-symbols-outlined text-4xl text-white opacity-0 drop-shadow-lg transition-opacity duration-300 group-hover:opacity-100">
+                        visibility
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/20">
-                    <span className="material-symbols-outlined text-4xl text-white opacity-0 drop-shadow-lg transition-opacity duration-300 group-hover:opacity-100">
-                      visibility
-                    </span>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -222,9 +229,9 @@ export default function HomePage() {
           />
         </div>
         <div>
-          <h1 className="text-center text-3xl font-bold md:text-4xl">
+          <h2 className="text-center text-3xl font-bold md:text-4xl">
             Sipariş ve İletişim
-          </h1>
+          </h2>
           <p className="text-text-muted mt-2 text-center dark:text-gray-400">
             Sakarya, Adapazarı | +90 539 934 71 07
           </p>

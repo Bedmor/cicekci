@@ -56,10 +56,10 @@ export default function Footer() {
       <div className="text-text-muted mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-gray-100 pt-8 text-sm md:flex-row dark:border-gray-800 dark:text-gray-500">
         <p>© 2026 Ada Çiçekçilik. Tüm hakları saklıdır.</p>
         <div className="flex gap-6">
-          <Link href="#" className="hover:text-primary">
+          <Link href="/privacy" className="hover:text-primary">
             Gizlilik Politikası
           </Link>
-          <Link href="#" className="hover:text-primary">
+          <Link href="/terms" className="hover:text-primary">
             Kullanım Şartları
           </Link>
         </div>
