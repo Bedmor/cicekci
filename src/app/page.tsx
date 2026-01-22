@@ -9,80 +9,21 @@ import { ArrowLeft, Instagram, MessageCircle, Phone } from "lucide-react";
 
 // Image data mapping
 const categoryImages: Record<string, string[]> = {
-  buket: [
-    "WhatsApp Image 2026-01-14 at 18.31.24.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.25 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.25 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.25.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.26 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.26.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.27 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.27 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.27.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.28 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.28 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.28 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.28 (4).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.28.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.29 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.29 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.29 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.29.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.31.30.jpeg",
-  ],
-  saksi: [
-    "WhatsApp Image 2026-01-14 at 18.38.04.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.05.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.06 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.06 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.06.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.07 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.07 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.07 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.07 (4).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.07.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.08 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.08 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.08 (4).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.08.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.38.09 (1).jpeg",
-  ],
-  "acilis ve dugun": [
-    "WhatsApp Image 2026-01-14 at 18.35.05.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.06 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.06.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.07 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.07 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.07 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.07 (4).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.07.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.08 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.08 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.08 (3).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.08.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.35.09.jpeg",
-  ],
-  "gelin arabası": [
-    "WhatsApp Image 2026-01-14 at 18.39.24.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.26.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.27 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.27 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.27.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.38 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.38.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.39 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.39 (2).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.39.39.jpeg",
-  ],
-  "kisiye ozel": [
-    "WhatsApp Image 2026-01-14 at 18.41.03 (1).jpeg",
-    "WhatsApp Image 2026-01-14 at 18.41.03.jpeg",
-  ],
-  cenaze: [
-    "WhatsApp Image 2026-01-14 at 18.42.40.jpeg",
-    "WhatsApp Image 2026-01-14 at 18.42.41.jpeg",
-  ],
+  buket: Array.from({ length: 19 }, (_, i) => `buket-${i + 1}.jpg`),
+  saksi: Array.from({ length: 17 }, (_, i) => `saksi-cicegi-${i + 1}.jpg`),
+  "acilis ve dugun": Array.from(
+    { length: 13 },
+    (_, i) => `acilis-ve-dugun-${i + 1}.jpg`,
+  ),
+  "gelin arabası": Array.from(
+    { length: 10 },
+    (_, i) => `gelin-arabasi-${i + 1}.jpg`,
+  ),
+  "kisiye ozel": Array.from(
+    { length: 2 },
+    (_, i) => `kisiye-ozel-${i + 1}.jpg`,
+  ),
+  cenaze: Array.from({ length: 2 }, (_, i) => `cenaze-celengi-${i + 1}.jpg`),
 };
 
 const categories = [
@@ -90,37 +31,37 @@ const categories = [
     title: "Buket Çiçekler",
     folder: "buket",
     subtitle: "Sevdiklerinizi mutlu etmenin en renkli yolu.",
-    image: "/buket/WhatsApp Image 2026-01-14 at 18.31.30.jpeg",
+    image: "/buket/buket-19.jpg",
   },
   {
     title: "Saksı Çiçekleri",
     folder: "saksi",
     subtitle: "Evinize ve ofisinize doğal bir dokunuş.",
-    image: "/saksi/WhatsApp Image 2026-01-14 at 18.38.04.jpeg",
+    image: "/saksi/saksi-cicegi-1.jpg",
   },
   {
     title: "Açılış & Düğün",
     folder: "acilis ve dugun",
     subtitle: "Özel günlerinizde yanınızdayız.",
-    image: "/acilis ve dugun/WhatsApp Image 2026-01-14 at 18.35.05.jpeg",
+    image: "/acilis ve dugun/acilis-ve-dugun-1.jpg",
   },
   {
     title: "Gelin Arabası",
     folder: "gelin arabası",
     subtitle: "En mutlu gününüzü süslüyoruz.",
-    image: "/gelin arabası/WhatsApp Image 2026-01-14 at 18.39.26.jpeg",
+    image: "/gelin arabası/gelin-arabasi-2.jpg",
   },
   {
     title: "Kişiye Özel",
     folder: "kisiye ozel",
     subtitle: "Size özel tasarımlar.",
-    image: "/kisiye ozel/WhatsApp Image 2026-01-14 at 18.41.03 (1).jpeg",
+    image: "/kisiye ozel/kisiye-ozel-1.jpg",
   },
   {
     title: "Cenaze Çelenkleri",
     folder: "cenaze",
     subtitle: "Acı günlerde saygı duruşu.",
-    image: "/cenaze/WhatsApp Image 2026-01-14 at 18.42.40.jpeg",
+    image: "/cenaze/cenaze-celengi-1.jpg",
   },
 ];
 
@@ -173,7 +114,7 @@ export default function HomePage() {
                     <div className="relative h-full w-full transition-transform duration-500 group-hover:scale-110">
                       <Image
                         src={`/${selectedFolder}/${img}`}
-                        alt={`${categoryTitle} Modeli ${idx + 1} - Ada Çiçekçilik Sakarya`}
+                        alt={`${categoryTitle} ${idx + 1}`}
                         fill
                         className="object-cover object-center"
                         sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
@@ -400,7 +341,7 @@ export default function HomePage() {
             <div className="mt-6 flex justify-center lg:hidden">
               <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-2xl ring-1 ring-black/5">
                 <Image
-                  src="/saksi/WhatsApp Image 2026-01-22 at 18.15.10.jpeg"
+                  src="/saksi/saksi-cicegi-17.jpg"
                   alt="Ada Çiçekçilik Hikayesi"
                   fill
                   className="object-cover object-center"
@@ -412,7 +353,7 @@ export default function HomePage() {
             <div className="hidden w-full flex-1 items-center justify-center lg:order-2 lg:flex lg:justify-end">
               <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-2xl ring-1 ring-black/5 transition-transform duration-500 hover:scale-105">
                 <Image
-                  src="/saksi/WhatsApp Image 2026-01-22 at 18.15.10.jpeg"
+                  src="/saksi/saksi-cicegi-17.jpg"
                   alt="Ada Çiçekçilik Hikayesi"
                   fill
                   className="object-cover object-center"

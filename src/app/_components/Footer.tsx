@@ -21,6 +21,10 @@ export default function Footer() {
             Doğanın en güzel sanatını kapınıza getiriyoruz. Sürdürülebilir
             kaynaklı, sanatsal bir şekilde düzenlenmiş.
           </p>
+          <div className="text-text-muted text-sm dark:text-gray-400">
+            <p>Sakarya Caddesi</p>
+            <p>Adapazarı / Sakarya</p>
+          </div>
           <div className="flex gap-4">
             <Link
               href="https://www.instagram.com/sakarya_ada_cicekcilik"
