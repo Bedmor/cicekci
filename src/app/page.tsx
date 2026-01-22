@@ -5,7 +5,7 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Instagram, MessageCircle, Phone } from "lucide-react";
 
 // Image data mapping
 const categoryImages: Record<string, string[]> = {
@@ -210,8 +210,56 @@ export default function HomePage() {
         </div>
       )}
 
+      {/* Logo & Social Section */}
+      <section className="flex w-full flex-col items-center justify-center gap-6 px-4 pt-32 md:pt-40">
+        <div className="relative h-48 w-48 md:h-64 md:w-64">
+          <Image
+            src="/logo.png"
+            alt="Ada Çiçekçilik Logo"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
+        <div>
+          <h1 className="text-center text-3xl font-bold md:text-4xl">
+            Sipariş ve İletişim
+          </h1>
+          <p className="text-text-muted mt-2 text-center dark:text-gray-400">
+            Sakarya, Adapazarı | +90 539 934 71 07
+          </p>
+        </div>
+        <div className="flex gap-6">
+          <a
+            href="https://www.instagram.com/sakarya_ada_cicekcilik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-8 w-8 text-[#E1306C]" />
+          </a>
+          <a
+            href="https://wa.me/905399347107"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="h-8 w-8 text-[#25D366]" />
+          </a>
+          <a
+            href="tel:+905399347107"
+            className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
+            aria-label="Telefon"
+          >
+            <Phone className="h-8 w-8 text-blue-500" />
+          </a>
+        </div>
+      </section>
+
       {/* Hero Section */}
-      <section className="m-auto w-full flex-1 px-4 pt-32 pb-10 sm:px-10 md:pt-40">
+      <section className="m-auto w-full flex-1 px-4 pt-10 pb-10 sm:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col-reverse items-center gap-8 lg:flex-row lg:gap-16">
             {/* Text Content */}
