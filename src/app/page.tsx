@@ -404,21 +404,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quote / Break Section */}
-      <section className="bg-primary px-4 py-24 text-center text-white">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8">
-          <span className="material-symbols-outlined text-5xl opacity-50">
-            format_quote
-          </span>
-          <h3 className="font-serif text-2xl leading-relaxed italic md:text-4xl">
-            &quot;Çiçeklerin açtığı yerde, umut da yeşerir.&quot;
-          </h3>
-          <p className="text-sm font-bold tracking-widest uppercase opacity-80">
-            — Lady Bird Johnson
-          </p>
-        </div>
-      </section>
-
       {/* Contact Section Placeholder (linked from buttons) */}
       <div id="contact"></div>
 
