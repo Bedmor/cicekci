@@ -366,7 +366,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
             {/* Text Side */}
-            <div className="order-2 flex flex-1 flex-col gap-6 lg:order-1">
+            <div className="flex flex-1 flex-col gap-6">
               <div className="bg-primary/10 inline-flex w-fit items-center gap-2 rounded-full px-3 py-1">
                 <span className="bg-primary h-2 w-2 rounded-full"></span>
                 <span className="text-primary text-xs font-bold tracking-wider uppercase">
@@ -379,6 +379,7 @@ export default function HomePage() {
                 , <br />
                 Özenle Büyütülen.
               </h2>
+
               <div className="text-text-muted flex flex-col gap-4 text-lg leading-relaxed dark:text-gray-300">
                 <p>
                   Ada Çiçekçilik olarak, her çiçeğin bir hikayesi olduğuna
@@ -388,15 +389,28 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            {/* Image Side */}
-            <div className="order-1 w-full flex-1 lg:order-2">
-              <div className="relative h-full w-full transition-transform duration-1000 group-hover:scale-105">
+            {/* Mobile squircle placed under the heading */}
+            <div className="mt-6 flex justify-center lg:hidden">
+              <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-2xl ring-1 ring-black/5">
                 <Image
-                  src="/saksi/WhatsApp Image 2026-01-14 at 18.38.08 (2).jpeg"
+                  src="/saksi/WhatsApp Image 2026-01-22 at 18.15.10.jpeg"
                   alt="Ada Çiçekçilik Hikayesi"
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </div>
+            {/* Image Side (Squircle for lg+) */}
+            <div className="hidden w-full flex-1 items-center justify-center lg:order-2 lg:flex lg:justify-end">
+              <div className="relative h-80 w-80 overflow-hidden rounded-[2.5rem] bg-gray-100 shadow-2xl ring-1 ring-black/5 transition-transform duration-500 hover:scale-105">
+                <Image
+                  src="/saksi/WhatsApp Image 2026-01-22 at 18.15.10.jpeg"
+                  alt="Ada Çiçekçilik Hikayesi"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 30vw"
+                  priority
                 />
               </div>
             </div>

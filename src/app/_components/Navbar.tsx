@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 
 export default function Navbar() {
@@ -14,58 +15,108 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full px-4 sm:px-10 py-6 z-40 transition-all duration-300 backdrop-blur-md bg-white/70 dark:bg-black/60 border-b border-white/10">
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-          <span className="material-symbols-outlined text-primary text-3xl transition-transform duration-500 group-hover:rotate-45">
-            local_florist
+    <header className="fixed top-0 left-0 z-40 w-full border-b border-white/10 bg-white/70 px-4 py-4 backdrop-blur-md transition-all duration-300 sm:px-10 dark:bg-black/60">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between">
+        <Link href="/" className="group flex cursor-pointer items-center gap-3">
+          <span className="inline-block transition-transform duration-500 group-hover:rotate-45">
+            <Image
+              src="/favicon.svg"
+              alt="Ada Çiçekçilik logo"
+              width={64}
+              height={64}
+            />
           </span>
-          <h2 className="text-xl font-bold tracking-tight text-text-main dark:text-white">
-            Ada Çiçekçilik
-          </h2>
         </Link>
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="#categories" className="text-sm font-medium hover:text-primary transition-colors">Mağaza</Link>
-          <Link href="#story" className="text-sm font-medium hover:text-primary transition-colors">Hikayemiz</Link>
-          <Link href="#categories" className="text-sm font-medium hover:text-primary transition-colors">Hizmetler</Link>
-          <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">İletişim</Link>
+        <nav className="hidden items-center gap-8 md:flex">
+          <Link
+            href="#categories"
+            className="hover:text-primary text-sm font-medium transition-colors"
+          >
+            Mağaza
+          </Link>
+          <Link
+            href="#story"
+            className="hover:text-primary text-sm font-medium transition-colors"
+          >
+            Hikayemiz
+          </Link>
+          <Link
+            href="#categories"
+            className="hover:text-primary text-sm font-medium transition-colors"
+          >
+            Hizmetler
+          </Link>
+          <Link
+            href="#contact"
+            className="hover:text-primary text-sm font-medium transition-colors"
+          >
+            İletişim
+          </Link>
         </nav>
         <div className="flex items-center gap-4">
           <button
-            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-            className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5 dark:hover:bg-white/10"
             title="Temayı Değiştir"
           >
             {mounted && (
-              <span className="material-symbols-outlined text-[20px] text-text-main dark:text-white">
+              <span className="material-symbols-outlined text-text-main text-[20px] dark:text-white">
                 {resolvedTheme === "dark" ? "light_mode" : "dark_mode"}
               </span>
             )}
           </button>
-          
-          <Link 
+
+          <Link
             href="#contact"
-            className="group relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            className="group relative flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5 dark:hover:bg-white/10"
             title="İletişim"
           >
-            <span className="material-symbols-outlined text-[20px] text-text-main dark:text-white group-hover:text-primary transition-colors">mail</span>
+            <span className="material-symbols-outlined text-text-main group-hover:text-primary text-[20px] transition-colors dark:text-white">
+              mail
+            </span>
           </Link>
-          <button 
+          <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-black/5 md:hidden dark:hover:bg-white/10"
           >
             <span className="material-symbols-outlined text-[20px]">menu</span>
           </button>
         </div>
       </div>
-      
+
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-24 left-0 w-full bg-white dark:bg-black/90 z-50 p-4 border-b border-gray-100 flex flex-col gap-4 shadow-xl">
-             <Link href="#categories" className="text-sm font-medium hover:text-primary transition-colors block py-2" onClick={() => setIsOpen(false)}>Mağaza</Link>
-             <Link href="#story" className="text-sm font-medium hover:text-primary transition-colors block py-2" onClick={() => setIsOpen(false)}>Hikayemiz</Link>
-             <Link href="#categories" className="text-sm font-medium hover:text-primary transition-colors block py-2" onClick={() => setIsOpen(false)}>Hizmetler</Link>
-             <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors block py-2" onClick={() => setIsOpen(false)}>İletişim</Link>
+        <div className="absolute top-24 left-0 z-50 flex w-full flex-col gap-4 border-b border-gray-100 bg-white p-4 shadow-xl md:hidden dark:bg-black/90">
+          <Link
+            href="#categories"
+            className="hover:text-primary block py-2 text-sm font-medium transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Mağaza
+          </Link>
+          <Link
+            href="#story"
+            className="hover:text-primary block py-2 text-sm font-medium transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Hikayemiz
+          </Link>
+          <Link
+            href="#categories"
+            className="hover:text-primary block py-2 text-sm font-medium transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Hizmetler
+          </Link>
+          <Link
+            href="#contact"
+            className="hover:text-primary block py-2 text-sm font-medium transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            İletişim
+          </Link>
         </div>
       )}
     </header>
