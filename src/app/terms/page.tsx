@@ -92,7 +92,7 @@ export default function TermsPage() {
               </h2>
               <p>
                 Bu sitedeki tüm içerik (logolar, görseller, metinler,
-                tasarımlar) Ada Çiçekçilik'e aittir. İzinsiz kopyalanması,
+                tasarımlar) Ada Çiçekçilik&apos;e aittir. İzinsiz kopyalanması,
                 dağıtılması veya ticari amaçla kullanılması yasaktır.
               </p>
             </section>
@@ -102,7 +102,7 @@ export default function TermsPage() {
                 6. Değişiklikler
               </h2>
               <p>
-                Ada Çiçekçilik, bu Kullanım Koşulları'nı dilediği zaman
+                Ada Çiçekçilik, bu Kullanım Koşulları&apos;nı dilediği zaman
                 güncelleme hakkını saklı tutar. Güncel koşullar sitede
                 yayınlandığı tarihten itibaren geçerli olur.
               </p>

@@ -144,10 +144,10 @@ export default function HomePage() {
 
       {/* Gallery Modal */}
       {selectedFolder && (
-        <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-black/95 p-4 sm:p-8">
+        <div className="fixed inset-0 z-60 flex flex-col items-center justify-center bg-black/95 p-4 sm:p-8">
           <button
             onClick={closeGallery}
-            className="hover:text-primary absolute top-4 right-4 z-[61] rounded-full bg-black/50 p-2 text-white transition-colors"
+            className="hover:text-primary absolute top-4 right-4 z-61 rounded-full bg-black/50 p-2 text-white transition-colors"
           >
             <span className="material-symbols-outlined text-3xl">close</span>
           </button>
@@ -160,7 +160,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-3 pb-10 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
               {categoryImages[selectedFolder]?.map((img, idx) => {
                 const categoryTitle =
-                  categories.find((c) => c.folder === selectedFolder)?.title ||
+                  categories.find((c) => c.folder === selectedFolder)?.title ??
                   "Çiçek";
                 return (
                   <div
@@ -195,12 +195,12 @@ export default function HomePage() {
       {/* Lightbox for single image */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 p-4"
+          className="fixed inset-0 z-70 flex items-center justify-center bg-black/95 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="hover:text-primary absolute top-4 right-4 z-[71] p-2 text-white transition-colors"
+            className="hover:text-primary absolute top-4 right-4 z-71 p-2 text-white transition-colors"
           >
             <span className="material-symbols-outlined text-4xl">close</span>
           </button>
