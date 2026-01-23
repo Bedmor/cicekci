@@ -12,7 +12,62 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Ada Çiçekçilik",
+  title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçek Siparişi",
+  description:
+    "Sakarya Adapazarı'nda taze çiçek, buket, gelin arabası süslemesi, açılış ve düğün çiçekleri. Aynı gün teslimat ile sevdiklerinizi mutlu edin. ☎ 0539 934 71 07",
+  keywords: [
+    "çiçekçi",
+    "sakarya çiçekçi",
+    "adapazarı çiçekçi",
+    "çiçek siparişi",
+    "buket",
+    "gelin arabası",
+    "düğün çiçeği",
+    "açılış çiçeği",
+    "cenaze çelengi",
+    "saksı çiçeği",
+  ],
+  authors: [{ name: "Ada Çiçekçilik" }],
+  creator: "Ada Çiçekçilik",
+  publisher: "Ada Çiçekçilik",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://adacicekcilik.com",
+    siteName: "Ada Çiçekçilik",
+    title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçek Siparişi",
+    description:
+      "Sakarya Adapazarı'nda taze çiçek siparişi. Buket, gelin arabası, düğün ve açılış çiçekleri. Aynı gün teslimat!",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Ada Çiçekçilik - Sakarya Adapazarı",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ada Çiçekçilik | Sakarya Adapazarı",
+    description:
+      "Sakarya Adapazarı'nda taze çiçek siparişi. Aynı gün teslimat!",
+    images: ["/og.png"],
+  },
+  alternates: {
+    canonical: "https://adacicekcilik.com",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

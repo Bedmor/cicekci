@@ -1,0 +1,16 @@
+# Ada Çiçekçilik - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://adacicekcilik.com/sitemap.xml
+
+# Google Ads Bot
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
