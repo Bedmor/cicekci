@@ -22,11 +22,6 @@ export const metadata: Metadata = {
   keywords: [
     "sakarya çiçekçi",
     "adapazarı çiçekçi",
-    "serdivan çiçekçi",
-    "erenler çiçekçi",
-    "çiçekçilik",
-    "gece açık çiçekçi",
-    "nöbetçi çiçekçi",
     "sakarya caddesi çiçekçi",
     "canlı çiçek",
     "gelin arabası süsleme",

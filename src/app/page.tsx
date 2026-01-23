@@ -335,6 +335,11 @@ export default function HomePage() {
                   zamanda duygularınızı, düşüncelerinizi ve anılarınızı da
                   gönderiyorsunuz.
                 </p>
+
+                <p>
+                  Adapazarı Sakarya Caddesi&apos;ndeki mağazamızdan Serdivan, Erenler ve tüm şehre mutluluk taşıyoruz.
+                  En taze çiçeklerden hazırladığımız tasarımlarımızla yıllardır yanınızdayız.
+                </p>
               </div>
             </div>
             {/* Mobile squircle placed under the heading */}
