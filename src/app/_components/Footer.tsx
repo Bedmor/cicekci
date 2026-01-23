@@ -47,15 +47,14 @@ export default function Footer() {
           </div>
         </div>
         {/* Newsletter */}
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188.85853510024182!2d30.41137182897075!3d40.76781853916044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ccb30062ec81fb%3A0xb50726c59ecfc5f4!2zQWRhIMOHacOnZWvDp2lsaWs!5e0!3m2!1str!2str!4v1768474565233!5m2!1str!2str"
-          width="350"
-          height="300"
-          className="w-full"
-          allowFullScreen={true}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <div className="relative h-75 w-full max-w-87.5 overflow-hidden rounded-xl">
+          <Image
+            src="/logo2.png"
+            alt="Ada Çiçekçilik Konum"
+            fill
+            className="object-contain"
+          />
+        </div>
       </div>
       <div className="text-text-muted mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-gray-100 pt-8 text-sm md:flex-row dark:border-gray-800 dark:text-gray-500">
         <p>© 2026 Ada Çiçekçilik. Tüm hakları saklıdır.</p>

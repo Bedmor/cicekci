@@ -47,7 +47,10 @@ export default function CookieManager() {
 
       {/* Cookie Consent Banner - Only visible if no choice made yet */}
       {consent === null && (
-        <div style={{zIndex: 2147483647}} className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-800 dark:bg-black/95">
+        <div
+          style={{ zIndex: 2147483647 }}
+          className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-800 dark:bg-black/95"
+        >
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
             <div className="text-sm text-gray-600 dark:text-gray-300">
               <p>
