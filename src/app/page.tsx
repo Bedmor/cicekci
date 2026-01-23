@@ -337,8 +337,9 @@ export default function HomePage() {
                 </p>
 
                 <p>
-                  Adapazarı Sakarya Caddesi&apos;ndeki mağazamızdan Serdivan, Erenler ve tüm şehre mutluluk taşıyoruz.
-                  En taze çiçeklerden hazırladığımız tasarımlarımızla yıllardır yanınızdayız.
+                  Adapazarı Sakarya Caddesi&apos;ndeki mağazamızdan Serdivan,
+                  Erenler ve tüm şehre mutluluk taşıyoruz. En taze çiçeklerden
+                  hazırladığımız tasarımlarımızla yıllardır yanınızdayız.
                 </p>
               </div>
             </div>
