@@ -1,11 +1,21 @@
 # Ada Çiçekçilik - Robots.txt
+# https://www.sakaryaadacicekcilik.com
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/static/
 
 # Sitemap
-Sitemap: https://adacicekcilik.com/sitemap.xml
+Sitemap: https://www.sakaryaadacicekcilik.com/sitemap.xml
 
-# Google Ads Bot
+# Google Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: AdsBot-Google
 Allow: /
 
@@ -13,4 +23,25 @@ User-agent: AdsBot-Google-Mobile
 Allow: /
 
 User-agent: Mediapartners-Google
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
 Allow: /

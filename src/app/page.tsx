@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
+import { FAQSchema } from "./_components/StructuredData";
 import { ArrowLeft, Instagram, MessageCircle, Phone } from "lucide-react";
 
 // Image data mapping
@@ -80,6 +81,7 @@ export default function HomePage() {
 
   return (
     <div className="bg-background-light dark:bg-background-dark text-text-main relative flex min-h-screen w-full flex-col overflow-x-hidden font-sans transition-colors duration-300 dark:text-white">
+      <FAQSchema />
       <Navbar />
       <ContactMenu />
 
@@ -222,8 +224,10 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="text-text-muted max-w-md text-sm leading-relaxed dark:text-gray-300">
-                Mevsimin en taze çiçekleriyle hazırlanan el yapımı aranjmanlar
-                kapınıza gelsin. Doğanın güzelliğini yaşam alanlarınıza taşıyın.
+                Sakarya ve Adapazarı&apos;nda mevsimin en taze çiçekleriyle
+                hazırlanan el yapımı buket ve saksı çiçekleri kapınıza gelsin.
+                Sevgililer günü ve özel günlerinizde doğanın güzelliğini
+                sevdiklerinize taşıyın.
               </p>
               <div className="mt-4 flex flex-wrap gap-4">
                 <a
@@ -277,7 +281,7 @@ export default function HomePage() {
                   <div className="relative z-10 h-full w-full transition-transform duration-700 group-hover:scale-110">
                     <Image
                       src={category.image}
-                      alt={`${category.title} - Ada Çiçekçilik`}
+                      alt={`Sakarya ${category.title} - Ada Çiçekçilik`}
                       fill
                       className="object-cover object-center"
                       sizes="(max-width: 640px) 50vw, 33vw"

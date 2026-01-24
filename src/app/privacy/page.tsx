@@ -1,5 +1,19 @@
+import { type Metadata } from "next";
 import Navbar from "../_components/Navbar";
 import Footer from "../_components/Footer";
+
+export const metadata: Metadata = {
+  title: "Gizlilik Politikası | Ada Çiçekçilik",
+  description:
+    "Ada Çiçekçilik gizlilik politikası. Kişisel verilerinizin nasıl toplandığı, kullanıldığı ve korunduğu hakkında bilgi.",
+  alternates: {
+    canonical: "https://www.sakaryaadacicekcilik.com/privacy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function PrivacyPage() {
   return (

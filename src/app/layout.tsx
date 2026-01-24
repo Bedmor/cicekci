@@ -4,6 +4,10 @@ import { type Metadata, type Viewport } from "next";
 import { Epilogue } from "next/font/google";
 import { ThemeProvider } from "~/app/theme-provider";
 import CookieManager from "./_components/CookieManager";
+import {
+  LocalBusinessSchema,
+  WebsiteSchema,
+} from "./_components/StructuredData";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -12,9 +16,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sakaryaadacicekcilik.com"),
   title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçek Siparişi",
   description:
-    "Sakarya Adapazarı'nda taze çiçek, buket, gelin arabası süslemesi, açılış ve düğün çiçekleri. Aynı gün teslimat ile sevdiklerinizi mutlu edin. ☎ 0539 934 71 07",
+    "Sakarya Adapazarı'nda taze çiçek, buket, gelin arabası, saksı çiçekleri, açılış ve düğün çiçekleri. Sevgililer günü ve özel günler için aynı gün teslimat. ☎ 0539 934 71 07",
   keywords: [
     "çiçekçi",
     "sakarya çiçekçi",
@@ -26,6 +31,12 @@ export const metadata: Metadata = {
     "açılış çiçeği",
     "cenaze çelengi",
     "saksı çiçeği",
+    "sevgililer günü çiçekçi",
+    "sakarya buket",
+    "sakarya saksı",
+    "adapazarı çiçek siparişi",
+    "serdivan çiçekçi",
+    "erenler çiçekçi",
   ],
   authors: [{ name: "Ada Çiçekçilik" }],
   creator: "Ada Çiçekçilik",
@@ -44,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://adacicekcilik.com",
+    url: "https://www.sakaryaadacicekcilik.com",
     siteName: "Ada Çiçekçilik",
     title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçek Siparişi",
     description:
@@ -66,8 +77,13 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   alternates: {
-    canonical: "https://adacicekcilik.com",
+    canonical: "https://www.sakaryaadacicekcilik.com",
+    languages: {
+      "tr-TR": "https://www.sakaryaadacicekcilik.com",
+    },
   },
+  category: "florist",
+  classification: "Business",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -107,6 +123,8 @@ export default function RootLayout({
         `}</style>
       </head>
       <body className="antialiased">
+        <LocalBusinessSchema />
+        <WebsiteSchema />
         <CookieManager />
         <ThemeProvider
           attribute="class"

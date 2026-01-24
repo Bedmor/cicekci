@@ -1,5 +1,19 @@
+import { type Metadata } from "next";
 import Navbar from "../_components/Navbar";
 import Footer from "../_components/Footer";
+
+export const metadata: Metadata = {
+  title: "Kullanım Koşulları | Ada Çiçekçilik",
+  description:
+    "Ada Çiçekçilik kullanım koşulları. Sitemizi kullanırken uymanız gereken kurallar ve şartlar.",
+  alternates: {
+    canonical: "https://www.sakaryaadacicekcilik.com/terms",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function TermsPage() {
   return (
@@ -124,7 +138,7 @@ export default function TermsPage() {
                   <strong>Telefon:</strong> +90 539 934 71 07
                 </p>
                 <p>
-                  <strong>E-posta:</strong> iletisim@adacicekcilik.com
+                  <strong>E-posta:</strong> iletisim@sakaryaadacicekcilik.com
                 </p>
               </div>
             </section>

@@ -14,6 +14,7 @@ declare global {
 
 export default function CookieManager() {
   const [consent, setConsent] = useState<"granted" | "denied" | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     // Check if user has already made a choice
@@ -21,6 +22,7 @@ export default function CookieManager() {
     if (storedConsent === "granted" || storedConsent === "denied") {
       setConsent(storedConsent);
     }
+    setIsLoaded(true);
   }, []);
 
   const handleAccept = () => {
@@ -53,50 +55,34 @@ export default function CookieManager() {
 
   return (
     <>
-      {/* Google Consent Mode v2 - Default State (Always load first) */}
-      <Script id="google-consent-default" strategy="beforeInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          
-          // Set default consent state BEFORE loading gtag
-          gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'analytics_storage': 'denied',
-            'wait_for_update': 500
-          });
-          
-          // Check if user already gave consent
-          var storedConsent = localStorage.getItem('cookie_consent');
-          if (storedConsent === 'granted') {
-            gtag('consent', 'update', {
-              'ad_storage': 'granted',
-              'ad_user_data': 'granted',
-              'ad_personalization': 'granted',
-              'analytics_storage': 'granted'
-            });
-          }
-        `}
-      </Script>
-
-      {/* Google Tag Manager / Ads - Always load after consent default */}
+      {/* Google Tag Manager - Always load unconditionally for transparency */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=AW-17893129295"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-gtag-init" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          
+          // Initialize gtag
           gtag('js', new Date());
+          
+          // Set default consent - always denied until user accepts
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied', 
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+          });
+          
+          // Configure Google Ads
           gtag('config', 'AW-17893129295');
         `}
       </Script>
 
       {/* Cookie Consent Banner - Only visible if no choice made yet */}
-      {consent === null && (
+      {isLoaded && consent === null && (
         <div
           style={{ zIndex: 2147483647 }}
           className="fixed bottom-0 left-0 w-full border-t border-gray-200 bg-white p-4 shadow-2xl dark:border-gray-800 dark:bg-black/95"
