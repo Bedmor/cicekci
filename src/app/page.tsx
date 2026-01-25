@@ -66,6 +66,16 @@ const categories = [
   },
 ];
 
+const trackOrderStart = () => {
+  try {
+    (window as any).gtag?.("event", "conversion", {
+      send_to: "AW-17893129295/1zmoCKCkquwbEM_4jdRC",
+    });
+  } catch (err) {
+    // no-op if gtag is unavailable
+  }
+};
+
 export default function HomePage() {
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -195,6 +205,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
             aria-label="WhatsApp"
+            onClick={trackOrderStart}
           >
             <MessageCircle className="h-8 w-8 text-[#25D366]" />
           </a>
@@ -202,6 +213,7 @@ export default function HomePage() {
             href="tel:+905399347107"
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
             aria-label="Telefon"
+            onClick={trackOrderStart}
           >
             <Phone className="h-8 w-8 text-blue-500" />
           </a>

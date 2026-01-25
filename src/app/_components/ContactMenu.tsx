@@ -10,6 +10,18 @@ export default function ContactMenu() {
     setIsOpen(!isOpen);
   };
 
+  const trackOrderStart = (id: string) => {
+    if (id === "whatsapp" || id === "phone") {
+      try {
+        (window as any).gtag?.("event", "conversion", {
+          send_to: "AW-17893129295/1zmoCKCkquwbEM_4jdRC",
+        });
+      } catch (err) {
+        // no-op if gtag is unavailable
+      }
+    }
+  };
+
   // Configuration for the fan layout
   const R = 105; // Radius in pixels
   const items = [
@@ -57,6 +69,7 @@ export default function ContactMenu() {
                target={item.target}
                rel={item.target ? "noopener noreferrer" : undefined}
                title={item.label}
+               onClick={() => trackOrderStart(item.id)}
                className={`absolute w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg cursor-pointer hover:scale-110 z-10 ${item.color} transition-all duration-300 ease-out`}
                style={{
                    transform: isOpen ? `translate(${item.x}px, ${item.y}px)` : 'translate(0px, 0px) scale(0.5)',
