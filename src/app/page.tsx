@@ -181,7 +181,7 @@ export default function HomePage() {
         </div>
         <div className="flex gap-6">
           <a
-            href="https://www.instagram.com/sakarya_ada_cicekcilik"
+            href="https://www.instagram.com/adacicekcilik.sakarya"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
