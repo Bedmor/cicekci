@@ -17,6 +17,18 @@ export default function ContactMenu() {
     setIsOpen(!isOpen);
   };
 
+  const trackOrderStart = (id: string) => {
+    if (id === "whatsapp" || id === "phone") {
+      try {
+        (window as any).gtag?.("event", "conversion", {
+          send_to: "AW-17893129295/1zmoCKCkquwbEM_4jdRC",
+        });
+      } catch (err) {
+        // no-op if gtag is unavailable
+      }
+    }
+  };
+
   // Configuration for the fan layout
   const R = 105; // Radius in pixels
   const items = [
