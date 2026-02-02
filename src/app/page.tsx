@@ -7,6 +7,7 @@ import Footer from "./_components/Footer";
 import ContactMenu from "./_components/ContactMenu";
 import { FAQSchema } from "./_components/StructuredData";
 import { ArrowLeft, Instagram, MessageCircle, Phone } from "lucide-react";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 // Image data mapping
 const categoryImages: Record<string, string[]> = {
@@ -68,7 +69,8 @@ const categories = [
 
 const trackOrderStart = () => {
   try {
-    (window as any).gtag?.("event", "conversion", {
+    sendGTMEvent({
+      event: "conversion",
       send_to: "AW-17893129295/1zmoCKCkquwbEM_4jdRC",
     });
   } catch (err) {

@@ -8,7 +8,7 @@ import {
   LocalBusinessSchema,
   WebsiteSchema,
 } from "./_components/StructuredData";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -121,16 +121,10 @@ export default function RootLayout({
             'opsz' 24
           }
         `}</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17893129295">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17893129295');
-</script>
+        <GoogleTagManager
+          gtmId="AW-17893129295"
+          gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=AW-17893129295"
+        />
       </head>
       <body className="antialiased">
         <LocalBusinessSchema />
