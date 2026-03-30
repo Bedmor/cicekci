@@ -8,6 +8,7 @@ import ContactMenu from "./_components/ContactMenu";
 import { FAQSchema } from "./_components/StructuredData";
 import { ArrowLeft, Instagram, MessageCircle, Phone } from "lucide-react";
 import { sendGTMEvent } from "@next/third-parties/google";
+import { redirect } from "next/navigation";
 
 // Image data mapping
 const categoryImages: Record<string, string[]> = {
@@ -193,7 +194,7 @@ export default function HomePage() {
         </div>
         <div className="flex gap-6">
           <a
-            href="https://www.instagram.com/adacicekcilik.sakarya"
+            href="https://www.instagram.com/sakarya_adacicekcilik"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
@@ -201,24 +202,27 @@ export default function HomePage() {
           >
             <Instagram className="h-8 w-8 text-[#E1306C]" />
           </a>
-          <a
-            href="https://wa.me/905399347107"
-            target="_blank"
+          <button
             rel="noopener noreferrer"
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
             aria-label="WhatsApp"
-            onClick={() => trackOrderStart}
+            onClick={() => {
+              trackOrderStart();
+              redirect("https://wa.me/905399347107");
+            }}
           >
             <MessageCircle className="h-8 w-8 text-[#25D366]" />
-          </a>
-          <a
-            href="tel:+905399347107"
+          </button>
+          <button
             className="group flex items-center justify-center rounded-full bg-white p-4 shadow-lg transition-transform hover:scale-110 dark:bg-gray-800"
             aria-label="Telefon"
-            onClick={() => trackOrderStart}
+            onClick={() => {
+              trackOrderStart();
+              redirect("tel:+905399347107");
+            }}
           >
             <Phone className="h-8 w-8 text-blue-500" />
-          </a>
+          </button>
         </div>
       </section>
 

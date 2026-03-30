@@ -36,7 +36,7 @@ export default function ContactMenu() {
       id: "instagram",
       icon: Instagram,
       color: "bg-gradient-to-tr from-yellow-400 to-purple-600",
-      href: "https://www.instagram.com/adacicekcilik.sakarya",
+      href: "https://www.instagram.com/sakarya_adacicekcilik",
       target: "_blank",
       label: "Instagram",
       x: 0,

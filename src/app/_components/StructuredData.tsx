@@ -40,7 +40,7 @@ export function LocalBusinessSchema() {
       },
     ],
     sameAs: [
-      "https://www.instagram.com/adacicekcilik.sakarya",
+      "https://www.instagram.com/sakarya_adacicekcilik",
       "https://wa.me/905399347107",
     ],
     hasOfferCatalog: {

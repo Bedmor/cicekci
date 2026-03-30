@@ -121,10 +121,7 @@ export default function RootLayout({
             'opsz' 24
           }
         `}</style>
-        <GoogleTagManager
-          gtmId="AW-17893129295"
-          gtmScriptUrl="https://www.googletagmanager.com/gtag/js?id=AW-17893129295"
-        />
+        <GoogleTagManager gtmId="AW-17893129295" />
       </head>
       <body className="antialiased">
         <LocalBusinessSchema />
