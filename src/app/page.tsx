@@ -27,6 +27,14 @@ const categoryImages: Record<string, string[]> = {
     (_, i) => `kisiye-ozel-${i + 1}.jpg`,
   ),
   cenaze: Array.from({ length: 2 }, (_, i) => `cenaze-celengi-${i + 1}.jpg`),
+  "cenaze-cicekleri": Array.from(
+    { length: 2 },
+    (_, i) => `cenaze-celengi-${i + 1}.jpg`,
+  ),
+  "41-adet-gul-buketi": ["WhatsApp Image 2026-04-03 at 20.37.44.jpeg"],
+  "iki-dai-orkide": ["WhatsApp Image 2026-04-03 at 20.37.11.jpeg"],
+  "kisiye-ozel-kutu-ayicik": ["WhatsApp Image 2026-04-03 at 20.39.23.jpeg"],
+  "kisiye-ozel-kutu-cicek": ["WhatsApp Image 2026-04-03 at 20.36.18.jpeg"],
 };
 
 const categories = [
@@ -65,6 +73,37 @@ const categories = [
     folder: "cenaze",
     subtitle: "Acı günlerde saygı duruşu.",
     image: "/cenaze/cenaze-celengi-1.jpg",
+  },
+  {
+    title: "41 Adet Gül Buketi",
+    folder: "41-adet-gul-buketi",
+    subtitle: "Sevdiklerinize özel güllerle tamamlanan buket.",
+    image: "/41-adet-gul-buketi/WhatsApp Image 2026-04-03 at 20.37.44.jpeg",
+  },
+  {
+    title: "Cenaze Çiçekleri",
+    folder: "cenaze-cicekleri",
+    subtitle: "Saygı ve başsağlığı için nazik çelenkler.",
+    image: "/cenaze/cenaze-celengi-1.jpg",
+  },
+  {
+    title: "İki Dai Orkide",
+    folder: "iki-dai-orkide",
+    subtitle: "Zarif orkide aranjmanları ile şıklık.",
+    image: "/iki-dai-orkide/WhatsApp Image 2026-04-03 at 20.37.11.jpeg",
+  },
+  {
+    title: "Kişiye Özel Kutu Ayıcık",
+    folder: "kisiye-ozel-kutu-ayicik",
+    subtitle: "Sevgi dolu hediye kutuları ayıcık temasıyla.",
+    image:
+      "/kisiye-ozel-kutu-ayicik/WhatsApp Image 2026-04-03 at 20.39.23.jpeg",
+  },
+  {
+    title: "Kişiye Özel Kutu Çiçek",
+    folder: "kisiye-ozel-kutu-cicek",
+    subtitle: "Çiçekli kutu aranjmanlarıyla fark yaratın.",
+    image: "/kisiye-ozel-kutu-cicek/WhatsApp Image 2026-04-03 at 20.36.18.jpeg",
   },
 ];
 
@@ -246,6 +285,10 @@ export default function HomePage() {
                 hazırlanan el yapımı buket ve saksı çiçekleri kapınıza gelsin.
                 Sevgililer günü ve özel günlerinizde doğanın güzelliğini
                 sevdiklerinize taşıyın.
+              </p>
+              <p className="text-text-muted max-w-md text-sm leading-relaxed dark:text-gray-300">
+                Sakarya gece açık çiçekçi ve Sakarya Gelin Arabası Süsleme
+                hizmetlerimizle özel günlerinizi en güzel şekilde süslüyoruz.
               </p>
               <div className="mt-4 flex flex-wrap gap-4">
                 <a

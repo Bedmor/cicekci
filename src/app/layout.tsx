@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.sakaryaadacicekcilik.com"),
   title: "Ada Çiçekçilik | Sakarya Adapazarı Çiçek Siparişi",
   description:
-    "Sakarya Adapazarı'nda taze çiçek, buket, gelin arabası, saksı çiçekleri, açılış ve düğün çiçekleri. Sevgililer günü ve özel günler için aynı gün teslimat. ☎ 0539 934 71 07",
+    "Sakarya Adapazarı'nda taze çiçek, buket, gelin arabası, saksı çiçekleri, açılış ve düğün çiçekleri. Sakarya gece açık çiçekçi ve gelin arabası süsleme hizmeti. Sevgililer günü ve özel günler için aynı gün teslimat. ☎ 0539 934 71 07",
   keywords: [
     "çiçekçi",
     "sakarya çiçekçi",
@@ -27,11 +27,13 @@ export const metadata: Metadata = {
     "çiçek siparişi",
     "buket",
     "gelin arabası",
+    "gelin arabası süsleme",
     "düğün çiçeği",
     "açılış çiçeği",
     "cenaze çelengi",
     "saksı çiçeği",
     "sevgililer günü çiçekçi",
+    "sakarya gece açık çiçekçi",
     "sakarya buket",
     "sakarya saksı",
     "adapazarı çiçek siparişi",
