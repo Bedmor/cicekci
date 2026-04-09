@@ -32,6 +32,13 @@ const categoryImages: Record<string, string[]> = {
     (_, i) => `cenaze-celengi-${i + 1}.jpg`,
   ),
   "41-adet-gul-buketi": ["WhatsApp Image 2026-04-03 at 20.37.44.jpeg"],
+  "ozel-solmayan-gul-buketi": [
+    "WhatsApp Image 2026-04-06 at 18.53.20 (1).jpeg",
+    "WhatsApp Image 2026-04-06 at 18.53.20 (2).jpeg",
+    "WhatsApp Image 2026-04-06 at 18.53.20.jpeg",
+    "WhatsApp Image 2026-04-06 at 18.53.21 (1).jpeg",
+    "WhatsApp Image 2026-04-06 at 18.53.21.jpeg",
+  ],
   "iki-dai-orkide": ["WhatsApp Image 2026-04-03 at 20.37.11.jpeg"],
   "kisiye-ozel-kutu-ayicik": ["WhatsApp Image 2026-04-03 at 20.39.23.jpeg"],
   "kisiye-ozel-kutu-cicek": ["WhatsApp Image 2026-04-03 at 20.36.18.jpeg"],
@@ -79,6 +86,12 @@ const categories = [
     folder: "41-adet-gul-buketi",
     subtitle: "Sevdiklerinize özel güllerle tamamlanan buket.",
     image: "/41-adet-gul-buketi/WhatsApp Image 2026-04-03 at 20.37.44.jpeg",
+  },
+  {
+    title: "Özel Solmayan Gül Buketi",
+    folder: "ozel-solmayan-gul-buketi",
+    subtitle: "Uzun süre taze kalan güllerle özel bir buket.",
+    image: "/ozel-solmayan-gul-buketi/WhatsApp Image 2026-04-06 at 18.53.20.jpeg",
   },
   {
     title: "Cenaze Çiçekleri",
