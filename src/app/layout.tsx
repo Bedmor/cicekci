@@ -9,6 +9,7 @@ import {
   WebsiteSchema,
 } from "./_components/StructuredData";
 import { GoogleTagManager } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -137,6 +138,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
